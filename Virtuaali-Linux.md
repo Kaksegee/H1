@@ -20,6 +20,26 @@ Muuten VirtualBox asensi itsensä onnistuneesti installerin kautta. Seuraavaksi 
 ![Add file: Upload](toimii.png)
 ![Add file: Upload](lataa.png)
 
-Käyttöjärjestelmän asennettua boottasin koneen uudestaan.
+Käyttöjärjestelmän asennettua boottasin koneen uudestaan ja testasin netti selaimen avulla, että kaikki toimii.
+Testauksen jälkeen menin Terminal Emulaattoriin ja
+>$ sudo apt-get update 
 
+komennolla hain saatavilla olevat päivitykset
 
+![Add file: Upload](paivitys.png)
+
+ja 
+
+>$ sudo apt-get -y dist-upgrade
+
+komennolla päivitin kaiken
+
+viimeiseksi asensin palomuurin terminaalin kautta ja laitoin sen päälle komennoilla:
+
+>$ sudo apt-get -y install ufw
+
+ja
+
+>$ sudo ufw enable
+
+Tämän jälkeen reeboottasin järjestelmän ja pääsin nauttimaan Linuxin käytöstä.
