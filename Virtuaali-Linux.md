@@ -1,1 +1,1 @@
-
+# Debian Linuxin asentaminen virtuaalikoneeseen
