@@ -23,21 +23,21 @@ Muuten VirtualBox asensi itsensä onnistuneesti installerin kautta. Seuraavaksi 
 
 
 
-![Add file: Upload](boot.png)
+![Add file: Upload](boot.PNG)
 
 
 
 
 
 
-![Add file: Upload](toimii.png)
+![Add file: Upload](toimii.PNG)
 
 
 
 
 
 
-![Add file: Upload](lataa.png)
+![Add file: Upload](lataa.PNG)
 
 
 
@@ -54,7 +54,7 @@ komennolla hain saatavilla olevat päivitykset
 
 
 
-![Add file: Upload](paivitys.png)
+![Add file: Upload](paivitys.PNG)
 
 
 
