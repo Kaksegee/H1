@@ -1,0 +1,1 @@
+# Linuxin asentaminen virtuaalikoneelle
