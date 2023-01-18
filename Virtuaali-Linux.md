@@ -42,7 +42,7 @@ Aloitin lataamalla Linux Debianin uusimman version (11.6.0) ja VirtualBox-applik
 
 
 
-Käyttöjärjestelmän asennettua boottasin koneen uudestaan ja testasin netti selaimen avulla, että kaikki toimii.
+Käyttöjärjestelmän asennettua boottasin koneen uudestaan ja testasin nettiselaimen avulla, että kaikki toimii.
 Testauksen jälkeen menin Terminal Emulaattoriin ja
 >$ sudo apt-get update 
 
