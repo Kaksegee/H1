@@ -1,6 +1,6 @@
 
  
- ## x)
+ ### x)
  Tero Karvisen sivuilla https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited löytyy katsaus Linuxin käyttöjärjestelmän eri komentoihin ja ominaisuuksiin.
  
  Huomioita:
