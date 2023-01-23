@@ -82,26 +82,49 @@ Komennoilla pääsin testaamaan eri ohjelmia
     cd /
    
    
-   Komennoilla saan esiin juurihakemiston, jonka sisältä töytyy kaikki tiedostot
+   Komennolla sain esiin juurihakemiston, jonka sisältä töytyy kaikki tiedostot
    
     ls 
     
-   Komento listaa tiedostot ja hakemistot
+   Komento listaa tiedostot ja hakemistot valitussa hakemistossa
    
    ![Add file: Upload](root.PNG)
    
     cd /home/
-    ls 
-    
-   Komennoilla pääsin kotihakemistoon, josta löytyy kaikki käyttäjät. Minun tapauksessa vain oma käyttäjäni.
+  
+   Komennolla pääsin kotihakemistoon, josta löytyy kaikki käyttäjät. Minun tapauksessa vain oma käyttäjäni.
    
    ![Add file: Upload](home.PNG)
    
+   
     cd /home/r01
-    ls
+  
+    
    Komennoilla pääsin oman käyttäjän hakemistoon
    
    ![Add file: Upload](r01.PNG)
+   
+    cd /etc/
+    
+   Komenolla pääsin järjestelmän asetuksiin
+   
+   ![Add file: Upload](etc.PNG)
+   
+    cd /media/
+   
+  Komennolla pääsin siirrettävien tallenusvälineiden hakemistoon
+  
+  ![Add file: Upload](media.PNG)
+  
+    cd /var/log/
+    
+   Komenolla pääsin tarkastelemaan koko järjestelmän lokeja
+   
+  
+ ![Add file: Upload](log.PNG)
+  
+   
+   
    
    
    
