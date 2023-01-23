@@ -134,7 +134,7 @@ Komennoilla pääsin testaamaan eri ohjelmia
    
  ![Add file: Upload](onkogrep.PNG)    
 
-![Add file: Upload](testigrepfile.PNG)    
+    
 
 
 
