@@ -6,7 +6,7 @@
  Huomioita:
  * Linuxissa ollaan aina hakemiston sisällä
 * Pico ja Nano ovat hyviä tekstieditoreita
-* Linuxiin asennetaan ohelmistoa pakettien avulla
+* Linuxiin asennetaan ohjelmistoa pakettien avulla
  
  # Komentaja Pingviini
  Harjoituksen tarkoituksena on tutustua Linuxin eri komentoihin ja hakemistoihin ja harjoitella niiden käyttöä. Tein harjoituksen omalla pöytäkoneella 22.01.2023
