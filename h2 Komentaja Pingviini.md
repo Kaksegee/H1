@@ -26,7 +26,7 @@
 
 
 
-### Aloitin harjoituksen kello 11:08 asentamalla micro editorin
+## Aloitin harjoituksen kello 11:08 asentamalla micro editorin
 
 
        $ sudo apt-get update
@@ -42,7 +42,7 @@
   Komennolla sain asennettua micro tekstieditorin
      
 
- ### Seuraavaksi tutkin virtuaalikoneen ominaisuuksia (11:27)
+ ## Seuraavaksi tutkin virtuaalikoneen ominaisuuksia (11:27)
  
   Hyödyntämällä viime tehtävän komentoja asensin LSHW ohelman, jonka avulla pystyy tutkimaan käyttöjärjestelmän ominaisuuksia
   
@@ -56,7 +56,7 @@
   
   Listauksessa näkyy, kuinka olin antanut virtuaalikoneelle 5 GB RAMia ja että virtuaalikone pyörii samalla prosessorilla, kuin pöytäkoneeni.
   
-  ### Seuraavaksi asensin itselleni kolme mieluisaa komentorivi ohjelmaa (11:49)
+  ## Seuraavaksi asensin itselleni kolme mieluisaa komentorivi ohjelmaa (11:49)
   
   Valitisin ohlemiksi cmatrix, cowsay ja sl
   
@@ -71,8 +71,37 @@
 Komennoilla pääsin testaamaan eri ohjelmia
 
 ![Add file: Upload](cmatrix.PNG)
+
 ![Add file: Upload](cowsay.PNG)
+
 ![Add file: Upload](sl.PNG)
+
+
+
+## Seuraavaksi tutustuin tärkeimpiin kansioihin ja tiedostoihin Linux-käyttöjärjestelmässä (12:08)
+
+    ls
+   
+   Komennolla saan esiin juurihakemiston, jonka sisältä töytyy kaikki tiedostot
+   
+   ![Add file: Upload](root.PNG)
+   
+    cd home
+    
+   Komennolla pääsin kotihakemistoon, josta löytyy kaikki käyttäjät. Minun tapauksessa vain oma käyttäjäni.
+   
+   ![Add file: Upload](home.PNG)
+   
+    cd r01
+    
+   Komennolla pääsin oman käyttäjän hakemistoon
+   
+   ![Add file: Upload](r01.PNG)
+   
+   
+   
+   
+   
 
 
 
