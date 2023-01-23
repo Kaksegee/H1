@@ -146,7 +146,18 @@ Komennoilla pääsin testaamaan eri ohjelmia
    
 ![Add file: Upload](montagrep.PNG)
 
-    grep 
+    grep -v "Hello" hello
+    
+   Komennolla sain haettua kaikki sanat jotka eivät vastanneet lainausmerkkien sisällä olevaa sanaa
+   
+  
+ ![Add file: Upload](greptasma.PNG)
+ 
+   
+  
+  
+    
+  
   
    
    
