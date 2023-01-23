@@ -26,15 +26,31 @@
 
 
 
-###Aloitin harjoituksen kello 11:08 asentamalla micro editorin
+### Aloitin harjoituksen kello 11:08 asentamalla micro editorin
+
 
        $ sudo apt-get update
-
-Komennolla ja salasanan syöttämällä sain haettua saatavilla olevat päivitykset.
+       
+  Komennolla ja salasanan syöttämällä sain haettua saatavilla olevat päivitykset
 
       $ apt-cache show micro
-Komennolla sain löydettyä micro editorin
+      
+   Komennolla sain löydettyä micro editorin
 
-     $ Sudo apt-get -y install micro
+     $ sudo apt-get -y install micro
      
-Komennolla sain asennettua micro editorin
+  Komennolla sain asennettua micro tekstieditorin
+     
+
+ ### Seuraavaksi tutkin virtuaalikoneen ominaisuuksia (11:27)
+ 
+  Hyödyntämällä viime tehtävän komentoja asensin LSHW ohelman, jonka avulla pystyy tutkimaan käyttöjärjestelmän ominaisuuksia
+  
+     $ sudo lshw -short -sanitize
+     
+  Komennolla käynnistin lshw ohjelman ja listasin virtuaalikoneen ominaisuudet
+  
+  
+
+
+
