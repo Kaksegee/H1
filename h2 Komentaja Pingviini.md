@@ -123,6 +123,31 @@ Komennoilla pääsin testaamaan eri ohjelmia
   
  ![Add file: Upload](log.PNG)
   
+  
+ ## Grepin testaus 13:01
+ 
+ Aloitin tarkistamalla, että minulla on grepp käytössä ja sen jälkeen luomalla uuden kansion ja sinne tekstiä nano-editorilla käyttäen komentoja
+ 
+    grep
+    $ mkdir testigrep
+    nano hello
+   
+ ![Add file: Upload](onkogrep.PNG)    
+
+![Add file: Upload](testigrepfile.PNG)    
+
+![Add file: Upload](nanohello.PNG)
+
+ 
+    grep -c "Hello" hello
+    
+   Komenolla hain lainaismerkkien sisällä olevan sanan lukumäärää kansiossa "hello"
+   
+   
+![Add file: Upload](montagrep.PNG)
+
+    grep 
+  
    
    
    
