@@ -153,6 +153,35 @@ Komennoilla pääsin testaamaan eri ohjelmia
   
  ![Add file: Upload](greptasma.PNG)
  
+ 
+    grep --color "Hello" hello
+    
+ Värjäsin kaikki Hello sanat kyseisessä tiedostossa
+ 
+ ![Add file: Upload](grepvari.PNG)
+ 
+ 
+ ## Lopuksi (13:43)
+ 
+ Tässä harjoituksessa opettelin Debian-käyttöjärjestelmän ohjelmistojen ja hakemusten käyttöä. Vastaan ei tullut ongelmatapauksia.
+ 
+## Lähtee
+
+Command Line Basics Revisited, Tero Karvinen - 2020-02-03 (https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited)
+
+How To Use grep Command In Linux / UNIX With Practical Examples,  Vivek Gite - 20.1.2023 (https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/)
+
+11 Fun Linux Command-Line Programs You Should Try When Bored, Deepesh Sharma - 1.11.2022 (https://www.makeuseof.com/fun-linux-command-line-programs/)
+
+UNIX Basic commands: grep (https://www.techonthenet.com/unix/basic/grep.php)
+
+
+
+Roi Partanen
+
+ 
+ 
+ 
    
   
   
