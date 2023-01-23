@@ -126,7 +126,7 @@ Komennoilla pääsin testaamaan eri ohjelmia
   
  ## Grepin testaus 13:01
  
- Aloitin tarkistamalla, että minulla on grepp käytössä ja sen jälkeen luomalla uuden kansion ja sinne tekstiä nano-editorilla käyttäen komentoja
+ Aloitin tarkistamalla, että minulla on grep käytössä ja sen jälkeen luomalla uuden kansion ja sinne tekstiä nano-editorilla käyttäen komentoja
  
     grep
     $ mkdir testigrep
@@ -163,9 +163,9 @@ Komennoilla pääsin testaamaan eri ohjelmia
  
  ## Lopuksi (13:43)
  
- Tässä harjoituksessa opettelin Debian-käyttöjärjestelmän ohjelmistojen ja hakemusten käyttöä. Vastaan ei tullut ongelmatapauksia.
+ Tässä harjoituksessa opettelin Debian-käyttöjärjestelmän ohjelmistojen ja hakemistojen käyttöä. Vastaan ei tullut ongelmatapauksia.
  
-## Lähtee
+## Lähteet
 
 Command Line Basics Revisited, Tero Karvinen - 2020-02-03 (https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited)
 
