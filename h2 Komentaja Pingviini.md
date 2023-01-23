@@ -136,7 +136,7 @@ Komennoilla pääsin testaamaan eri ohjelmia
 
 ![Add file: Upload](testigrepfile.PNG)    
 
-![Add file: Upload](nanohello.PNG)
+
 
  
     grep -c "Hello" hello
