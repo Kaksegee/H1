@@ -51,6 +51,28 @@
   Komennolla käynnistin lshw ohjelman ja listasin virtuaalikoneen ominaisuudet
   
   
+![Add file: Upload](LSHW.PNG)
+  
+  
+  Listauksessa näkyy, kuinka olin antanut virtuaalikoneelle 5 GB RAMia ja että virtuaalikone pyörii samalla prosessorilla, kuin pöytäkoneeni.
+  
+  ### Seuraavaksi asensin itselleni kolme mieluisaa komentorivi ohjelmaa (11:49)
+  
+  Valitisin ohlemiksi cmatrix, cowsay ja sl
+  
+    $ sudo apt-get install cmatrix cowsay sl
+    
+  Komennolla asensin kaikki kolme ohjelmaa yhtäaikaa
+  
+     cmatrix
+     cowsay "hello"
+     sl
+     
+Komennoilla pääsin testaamaan eri ohjelmia
+
+![Add file: Upload](cmatrix.PNG)
+![Add file: Upload](cowsay.PNG)
+![Add file: Upload](sl.PNG)
 
 
 
