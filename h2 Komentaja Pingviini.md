@@ -79,22 +79,27 @@ Komennoilla pääsin testaamaan eri ohjelmia
 
 
 ## Seuraavaksi tutustuin tärkeimpiin kansioihin ja tiedostoihin Linux-käyttöjärjestelmässä (12:08)
-
-    ls
+    cd /
    
-   Komennolla saan esiin juurihakemiston, jonka sisältä töytyy kaikki tiedostot
+   
+   Komennoilla saan esiin juurihakemiston, jonka sisältä töytyy kaikki tiedostot
+   
+    ls 
+    
+   Komento listaa tiedostot ja hakemistot
    
    ![Add file: Upload](root.PNG)
    
-    cd home
+    cd /home/
+    ls 
     
-   Komennolla pääsin kotihakemistoon, josta löytyy kaikki käyttäjät. Minun tapauksessa vain oma käyttäjäni.
+   Komennoilla pääsin kotihakemistoon, josta löytyy kaikki käyttäjät. Minun tapauksessa vain oma käyttäjäni.
    
    ![Add file: Upload](home.PNG)
    
-    cd r01
-    
-   Komennolla pääsin oman käyttäjän hakemistoon
+    cd /home/r01
+    ls
+   Komennoilla pääsin oman käyttäjän hakemistoon
    
    ![Add file: Upload](r01.PNG)
    
