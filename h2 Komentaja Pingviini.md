@@ -44,7 +44,7 @@
 
  ## Seuraavaksi tutkin virtuaalikoneen ominaisuuksia (11:27)
  
-  Hyödyntämällä viime tehtävän komentoja asensin LSHW ohelman, jonka avulla pystyy tutkimaan käyttöjärjestelmän ominaisuuksia
+  Hyödyntämällä viime tehtävän komentoja asensin LSHW ohjelman, jonka avulla pystyy tutkimaan käyttöjärjestelmän ominaisuuksia
   
      $ sudo lshw -short -sanitize
      
@@ -58,7 +58,7 @@
   
   ## Seuraavaksi asensin itselleni kolme mieluisaa komentorivi ohjelmaa (11:49)
   
-  Valitisin ohlemiksi cmatrix, cowsay ja sl
+  Valitisin ohjelmiksi cmatrix, cowsay ja sl
   
     $ sudo apt-get install cmatrix cowsay sl
     
@@ -177,8 +177,7 @@ UNIX Basic commands: grep (https://www.techonthenet.com/unix/basic/grep.php)
 
 
 
-Roi Partanen
-
+#### Tehnyt Roi Partanen 23.1.2023
  
  
  
