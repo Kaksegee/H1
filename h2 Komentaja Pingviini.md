@@ -14,7 +14,7 @@
 
  
  
-## Laitteisto
+### Laitteisto
  
 * Käyttöjärjestelmä	Microsoft Windows 10 Enterprise LTSC 64 bit
 * Prosessori i5-6600
@@ -23,3 +23,18 @@
 * Virtuaalikoneen käyttöjärjestelmä: Debian-live-11.6.0-amd64-xfce+nonfree.iso
 
 
+
+
+
+###Aloitin harjoituksen kello 11:08 asentamalla micro editorin
+
+       $ sudo apt-get update
+
+Komennolla ja salasanan syöttämällä sain haettua saatavilla olevat päivitykset.
+
+      $ apt-cache show micro
+Komennolla sain löydettyä micro editorin
+
+     $ Sudo apt-get -y install micro
+     
+Komennolla sain asennettua micro editorin
