@@ -167,6 +167,8 @@ Komennoilla pääsin testaamaan eri ohjelmia
  
 ## Lähteet
 
+Linux Palvelimet 2023 alkukevät, Tero Karvinen (https://terokarvinen.com/2023/linux-palvelimet-2023-alkukevat/)
+
 Command Line Basics Revisited, Tero Karvinen - 2020-02-03 (https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited)
 
 How To Use grep Command In Linux / UNIX With Practical Examples,  Vivek Gite - 20.1.2023 (https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/)
