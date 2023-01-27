@@ -51,7 +51,7 @@
   Komennolla käynnistin lshw ohjelman ja listasin virtuaalikoneen ominaisuudet
   
   
-![Add file: Upload](LSHW.PNG)
+![Add file: Upload](/ss/LSHW.PNG)
   
   
   Listauksessa näkyy, kuinka olin antanut virtuaalikoneelle 5 GB RAMia ja että virtuaalikone pyörii samalla prosessorilla, kuin pöytäkoneeni.
@@ -70,11 +70,11 @@
      
 Komennoilla pääsin testaamaan eri ohjelmia
 
-![Add file: Upload](cmatrix.PNG)
+![Add file: Upload](/ss/cmatrix.PNG)
 
-![Add file: Upload](cowsay.PNG)
+![Add file: Upload](/ss/cowsay.PNG)
 
-![Add file: Upload](sl.PNG)
+![Add file: Upload](/ss/sl.PNG)
 
 
 
@@ -88,13 +88,13 @@ Komennoilla pääsin testaamaan eri ohjelmia
     
    Komento listaa tiedostot ja hakemistot valitussa hakemistossa
    
-   ![Add file: Upload](root.PNG)
+   ![Add file: Upload](/ss/root.PNG)
    
     cd /home/
   
    Komennolla pääsin kotihakemistoon, josta löytyy kaikki käyttäjät. Minun tapauksessa vain oma käyttäjäni.
    
-   ![Add file: Upload](home.PNG)
+   ![Add file: Upload](/ss/home.PNG)
    
    
     cd /home/r01
@@ -102,26 +102,26 @@ Komennoilla pääsin testaamaan eri ohjelmia
     
    Komennoilla pääsin oman käyttäjän hakemistoon
    
-   ![Add file: Upload](r01.PNG)
+   ![Add file: Upload](/ss/r01.PNG)
    
     cd /etc/
     
    Komenolla pääsin järjestelmän asetuksiin
    
-   ![Add file: Upload](etc.PNG)
+   ![Add file: Upload](/ss/etc.PNG)
    
     cd /media/
    
   Komennolla pääsin siirrettävien tallenusvälineiden hakemistoon
   
-  ![Add file: Upload](media.PNG)
+  ![Add file: Upload](/ss/media.PNG)
   
     cd /var/log/
     
    Komenolla pääsin tarkastelemaan koko järjestelmän lokeja
    
   
- ![Add file: Upload](log.PNG)
+ ![Add file: Upload](/ss/log.PNG)
   
   
  ## Grepin testaus 13:01
@@ -132,7 +132,7 @@ Komennoilla pääsin testaamaan eri ohjelmia
     $ mkdir testigrep
     nano hello
    
- ![Add file: Upload](onkogrep.PNG)    
+ ![Add file: Upload](/ss/onkogrep.PNG)    
 
     
 
@@ -144,21 +144,21 @@ Komennoilla pääsin testaamaan eri ohjelmia
    Komenolla hain lainaismerkkien sisällä olevan sanan lukumäärää kansiossa "hello"
    
    
-![Add file: Upload](montagrep.PNG)
+![Add file: Upload](/ss/montagrep.PNG)
 
     grep -v "Hello" hello
     
    Komennolla sain haettua kaikki sanat jotka eivät vastanneet lainausmerkkien sisällä olevaa sanaa
    
   
- ![Add file: Upload](greptasma.PNG)
+ ![Add file: Upload](/ss/greptasma.PNG)
  
  
     grep --color "Hello" hello
     
  Värjäsin kaikki Hello sanat kyseisessä tiedostossa
  
- ![Add file: Upload](grepvari.PNG)
+ ![Add file: Upload](/ss/grepvari.PNG)
  
  
  ## Lopuksi (13:43)
