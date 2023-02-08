@@ -188,100 +188,23 @@ Seuraavaksi kirjauduin sisään uudella käyttäjällä komennolla
    ![Add file: Upload](/ss/h69.PNG)  
    
    
-   
-  Kokeilin seuraavaksi käynnistää Apache-serverin uudestaan komennolla 
-  
-    $ sudo systemctl restart apache2
+ Seuraavaksi vaihdoin Apachen esimerkkisivun komennolla
+ 
+    $ echo Hello | sudo tee /var/www/html/index.html
     
-  Ja sain seuraavan viestin
    
-   ![Add file: Upload](/ss/ss6.2.PNG)  
+ Tämän jälkeen tein palomuuriin reiän komennolla 
+ 
+      $ sudo ufw allow 80/tcp
       
- 
-   
- Kävin vielä selaimessa osoitteessa 'localhost' ja sain seuraavan viestin
-  
-  
-   ![Add file: Upload](/ss/ss6.3.PNG)  
+Kävin selaimessa tarkistamassa muutokset ja testisivu latautui
+
+
+   ![Add file: Upload](/ss/h671.PNG)  
    
    
-   Seuraavaksi menin katsomaan Apachen konfiguraatio testiä komennolla
+  ![Add file: Upload](/ss/h670.PNG)  
    
-     $ cd /usr/sbin/
-     
- ja
- 
-    $ sudo apache2ctl configtest
-    
-Sain seuraavanlaisen viestin
-
-![Add file: Upload](/ss/ss6.4.PNG)
- 
-mikä viittaisi syntaksivirheeseen, 'frontpage.conf' sivulla, minkä johdosta konfiguraatio testi epäonnistui.
-
-Kävin myös tutkimassa Apachen virhelokin viitä viimeisintä viestiä kommenolla 
-
-    $ sudo tail -5 /var/log/apache2/error.log
-    
- jaa sain seuraavat lokit
-   
-![Add file: Upload](/ss/ss6.6.PNG)
-
-Viimeisimmässä lokissa näkyi ensin päivämäärä ja kellon aika oikeassa muodossa. Seuraavaksi lokissa oli listattu tapahtuman tyyppi (tässä tapauksessa ilmoitus). Seuraavaksi lokissa oli listattu thread- ja prosessi-id:t (TID ja PID). Seuraavaksi loki kertoo, että ohjelma on saanut pyynnön sulkeutua. 
-
-Sitä ennen olevissa lokeissa näkyy ensin päivämäärä ja kellon aika oikeassa muodossa. Seuraavaksi lokissa oli listattu tapahtuman tyyppi (tässä tapauksessa error-viesti) Seuraavaksi lokeissa oli listattu thread- ja prosessi-id:t (TID ja PID). Näiden jälkeen oli listattu asiakasohjelma ja sen jälkeen  viesti 'client denied by server configuration', minkä jälkeen hakemistopolku.
-
-Viestit 'client denied by configuration'  viittaisi ongelmaan Apachen konfiguraatiossa, joka estää pääsyä käsiksi hakemistoon. Mikä johtaa sitten ohjelman sulkeutumiseen.
-
-Testasin vielä, että ongelma ratkaistiin ja lokit olivat oikeassa
-
-Muokkasin frontpage.conf-tiedostoa komennolla
-
-    $ sudoedit /etc/apache2/sites-available/frontpage.conf
-
-ja poistin kirjoitusvirheen sanasta 'Directory'.
-
-![Add file: Upload](/ss/ss6.7.PNG)
-
-Käynnistin Apachen uudestaan kommennolla
-
-    $ sudo systemctl restart apache2
-
-Seuraavaksi tein Apachen konfiguraatio testin komennoilla
-
-   
-     $ cd /usr/sbin/
-     
- ja
- 
-    $ sudo apache2ctl configtest
-    
-    
-   ![Add file: Upload](/ss/ss6.8.PNG)   
-   
-  Syntaksi oli OK.
- 
- Kävin myös katsomassa Apachen virhelokin viimeisintä viestiä kommennolla
- 
-    $ sudo tail -1 /var/log/apache2/error.log
-    
-  ![Add file: Upload](/ss/ss6.10.PNG)  
-  
- Ensiksi lokissa näkyi päivämäärä ja kellon aika oikeassa muodossa. Seuraavaksi lokissa oli listattu tapahtuman tyyppi (tässä tapauksessa ilmoitus). Seuraavaksi lokissa oli listattu thread- ja prosessi-id:t (TID ja PID). Loki kertoo, että komentoa  
-  
-    $ /usr/sbin/apache2
-    
-  oli käytetty aloittamaan säiettä. Aikaisempi virhe ei ollut siis toistunut käynnistäessä Apachea uudestaan.
- 
-
-  
-  Tein vielä testin kommennolla
-  
-      $ curl 'localhost'
-      
- Ja sivusto toimi.
- 
- ![Add file: Upload](/ss/ss6.9.PNG)  
 
 
  ## Lopuksi 
