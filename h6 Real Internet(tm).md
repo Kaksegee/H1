@@ -133,7 +133,7 @@ Seuraavaksi loin uuden käyttäjän ja annoin sille oikeuksia kommennoilla
     
 Kokeilin kirjautua uudella käyttäjällä eri terminaalissa komennolla
 
-    $ ssh roi@IP-osoit
+    $ ssh roi@IP-osoite
     
   Ja pääsin sisään. Seuraavaksi lukitsin root-käyttäjän komenolla
   
@@ -147,9 +147,21 @@ Ja muuttamalla kohtaa PermitRootLogin yes -> no
    
   ![Add file: Upload](/ss/h67.PNG) 
    
-   
 
+Tämän jälkeen käynnistin ssh:n uudestaan komennolla 
+
+    $ sudo systemctl restart ssh
+   
+Seuraavaksi kirjauduin sisään uudella käyttäjällä komennolla
+
+     $ ssh roi@IP-osoite
  
+ Sitten päivitin ja asensin uusimmat paketit komennoilla 
+ 
+     $ sudo apt-get update
+     $ sudo apt-get upgrade
+     
+
     
  ja lisäämällä kirjoitusvirheen riville 3  'Directory' -> 'Directtory'.
  
