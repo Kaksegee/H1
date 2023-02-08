@@ -15,20 +15,10 @@ Artikkelin tarkoituksena on toimia pohjustuksena Apachen HTTP-palvelimien ja net
    * Apachen palvelin konfiguroidaan tekstitiedostojen avulla
    * Lokit auttavat vianmäärityksessä ja korjauksessa
 
-## Apache Software Foundation 2023: Name-based Virtual Host Support (https://httpd.apache.org/docs/current/vhosts/name-based.html)
-   Artikkelin tarkoituksena on kertoa milloin ja miten käyttää nimipohjaisia virtual hosteja.
-   
-   * Virtual hostit voivat olla IP-osoitepohjaisia tai nimipohjaisia
-   * IP-pohjaiset virtual hostit tarvitsevat jokaiselle hostille oman IP-osoitteen
-   * Nimipohjaiset virtual hostit ovat yksinkertaisempia ja helpottavat vähäisten IP-osoitteiden kysyntää käyttämällä samaa IP-osoitetta eri hosteille.
-   * Nimipohjainen virtual host ilmoitetaan muodossa  <VirtualHost *:80> ja sen alapuolelle määritetään ServerNamen avulla, mihin hostiin yhdistetään 
-   * ServerAlias komennolla voi määrittää useampi osoite samalla palvelimelle
-   * DocumentRoot-direktiivi kertoo missä hostin tiedostot sijaitsevat järjestelmässä
-   
-   
+  
    
  # H6
- Harjoituksen tarkoituksena on vuokrata oma virtuaalipalvelin ja laittaa sen astukset kuntoon, asentaa weppipalvelin ja etsiä merkkejä murtautumisyrityksistä. Tein harjoituksen omalla pöytäkoneella 08.02.2023.
+ Harjoituksen tarkoituksena on vuokrata oma virtuaalipalvelin ja laittaa sen asetukset kuntoon, asentaa weppipalvelin ja etsiä merkkejä murtautumisyrityksistä. Tein harjoituksen omalla pöytäkoneella 08.02.2023.
  
 
  
@@ -192,6 +182,9 @@ Seuraavaksi kirjauduin sisään uudella käyttäjällä komennolla
  
     $ echo Hello | sudo tee /var/www/html/index.html
     
+    
+   ![Add file: Upload](/ss/h670.PNG)  
+    
    
  Tämän jälkeen tein palomuuriin reiän komennolla 
  
@@ -202,25 +195,31 @@ Kävin selaimessa tarkistamassa muutokset ja testisivu latautui
 
    ![Add file: Upload](/ss/h671.PNG)  
    
-   
-  ![Add file: Upload](/ss/h670.PNG)  
-   
+## Murtautumisyritykset (0:08)
 
+Kävin tutkimassa /var/log/auth.log:sta merkkejä murtautumisyrityksistä komennolla
+
+    $ sudo less /var/log/auth.log
+   
+ ![Add file: Upload](/ss/h673.PNG)  
+ 
+Näyttäisi siltä että monta eri käyttäjää on yrittänyt sisään virtuaalipalvelimeen, mutta todennus on epäonnistunut. Kävin myös katsomassa /var/log/apache2/access.log:ia komennolla
+ 
+    $ sudo less /var/log/apache2/access.log
+    
+Mutta en löytänyt sieltä mitään omaan silmään hälyyttävää.
 
  ## Lopuksi 
  
- Tässä harjoituksessa tutustuin syvemmin Apache-palvelimeen ja harjoittelin Apachen etusivun muuttamista. Harjoittelin myös Apachen vianmääritystä.
+ Tässä harjoituksessa tutustuin vuokrasin virtuaalipalvelimen ja laitoin sen toimintaan. Asensin myös webbipalvelimen ja yutkin myös murtautumisyrityksiä. Ongelmia tuotti ssh:n puuttuminen ja muistin loppuminen. 
  
  
 ## Lähteet
 
-
-
-New Default Website with Apache2, Tero Karvinen - 16.2.2016 (https://terokarvinen.com/2016/new-default-website-with-apache2-show-your-homepage-at-top-of-example-com-no-tilde/)
 
 Linux Palvelimet 2023 alkukevät, Tero Karvinen (https://terokarvinen.com/2023/linux-palvelimet-2023-alkukevat/)
 
 First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS, Tero Karvinen - 19.11.2017 (https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/)
 
 
-#### Tehnyt Roi Partanen 08.02.2023
+#### Tehnyt Roi Partanen 08.02.2023-09.02.2023
