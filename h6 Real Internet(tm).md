@@ -4,16 +4,19 @@
  
  
  
-## 	 Apache Software Foundation 2023: Getting Started (https://httpd.apache.org/docs/2.4/getting-started.html)
+## 	 First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS (https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/)
 
-Artikkelin tarkoituksena on toimia pohjustuksena Apachen HTTP-palvelimien ja nettisivujen toimintaan.
+Tero Karvisen (19.9.2017) kirjoittamasa artikkelissa ohjeistetaan miten konfiguroidaan uusi yksityinen virtuaali- ja nimipalvelin.
 
-   * Osoitteet verkossa ilmoitetaan URL:n avulla
-   * Asiakasohjelmaa (esim. nettiselain) käytetään yhdistämään palvelimeen
-   * Yhdistääkseen palvelimelle asiakasohjelman täytyy ensin yhdistää palvelimen nimi ja IP-osoite
-   * Virtual Hostien avulla pystyy ylläpitämään monia eri sivuja samalla palvelimella
-   * Apachen palvelin konfiguroidaan tekstitiedostojen avulla
-   * Lokit auttavat vianmäärityksessä ja korjauksessa
+   * Eri virtuaalipalvelimien ja verkkotunnusten tarjoajien välillä on kova kilpailu
+   * Salasanojen pitää olla aina vahvoja, vaikka niitä käyttäisikin vain lyhyen aikaa
+   * Ensimmäistä kertaa kirjautuessa virtuaalipalvelimelle kirjaudutaan sisään juurikäyttäjänä
+   * Palomuuriin on tehtävä aukko ssh:lle, ennen kuin sen laittaa päälle
+   * On tärkeää luoda itselleen uusi käyttäjä ja antaa sille sudo-oikeudet
+   * Uuden käyttäjän luonnin jälkeen voi estää juurikäyttäjänä kirjautumisen
+   * Pakettien ja käyttöjärjestelmän pitäminen ajantasalla on tärkeää tietoturvan kannalta
+   * Uusille julkisille palvelimille on tehtävä aukko palomuuriin
+   * Eri nimipalvelimien tarjoajilta voi vuokrata nimiä esitettäväksi IP-osoitteen sijasta
 
   
    
@@ -219,7 +222,8 @@ Mutta en löytänyt sieltä mitään omaan silmään hälyyttävää.
 
 Linux Palvelimet 2023 alkukevät, Tero Karvinen (https://terokarvinen.com/2023/linux-palvelimet-2023-alkukevat/)
 
-First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS, Tero Karvinen - 19.11.2017 (https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/)
+First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS, Tero Karvinen - 19.9.2017 (https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/)
+
 
 
 #### Tehnyt Roi Partanen 08.02.2023-09.02.2023
