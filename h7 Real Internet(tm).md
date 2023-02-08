@@ -19,7 +19,7 @@ Tero Karvisen (19.9.2017) kirjoittamasa artikkelissa ohjeistetaan miten konfigur
 
   
    
- # H6
+ # H7
  Harjoituksen tarkoituksena on vuokrata oma virtuaalipalvelin ja sen konfiguroiminen manuaalisti, asentaa weppipalvelin ja etsiä merkkejä murtautumisyrityksistä. Tein harjoituksen omalla pöytäkoneella 08.02.2023-09.02.2023.
  
 
