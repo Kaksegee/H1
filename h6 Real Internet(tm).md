@@ -161,11 +161,33 @@ Seuraavaksi kirjauduin sisään uudella käyttäjällä komennolla
      $ sudo apt-get update
      $ sudo apt-get upgrade
      
+## Apache-palvelimen asentaminen virtuaalipalvelimelle (22:27)
 
+  Asensin Apache-palvelimen kommenoilla 
+  
+      $ sudo apt-get update
+      $ sudo apt-get install apache2
+      
+  Tein palomuuriin reiän Apachelle komennolla
+  
+       $ sudo ufw allow 80/tcp
+       
+  ja käynnistin Apache-palvelimen komennolla
+  
+       $ sudo systemctl start apache2
+       
+   Tarkistin, että Apache on käynnissä komennoilla 
     
- ja lisäämällä kirjoitusvirheen riville 3  'Directory' -> 'Directtory'.
- 
-   ![Add file: Upload](/ss/ss6.1.PNG)  
+       $ sudo systemctl status apache2 
+       $ curl 'localhost'
+       
+   ![Add file: Upload](/ss/h68.PNG)  
+   
+   Apachen esimerkkisivu latautui.
+   
+   ![Add file: Upload](/ss/h69.PNG)  
+   
+   
    
   Kokeilin seuraavaksi käynnistää Apache-serverin uudestaan komennolla 
   
