@@ -8,10 +8,9 @@
 
 Tero Karvisen (19.9.2017) kirjoittamasa artikkelissa ohjeistetaan miten konfiguroidaan uusi yksityinen virtuaali- ja nimipalvelin.
 
-   * Eri virtuaalipalvelimien ja verkkotunnusten tarjoajien välillä on kova kilpailu
    * Salasanojen pitää olla aina vahvoja, vaikka niitä käyttäisikin vain lyhyen aikaa
    * Ensimmäistä kertaa kirjautuessa virtuaalipalvelimelle kirjaudutaan sisään juurikäyttäjänä
-   * Palomuuriin on tehtävä aukko ssh:lle, ennen kuin sen laittaa päälle
+   * Ennen kuin palomuurin laittaa päälle, on siihen tehtävä aukko ssh:lle
    * On tärkeää luoda itselleen uusi käyttäjä ja antaa sille sudo-oikeudet
    * Uuden käyttäjän luonnin jälkeen voi estää juurikäyttäjänä kirjautumisen
    * Pakettien ja käyttöjärjestelmän pitäminen ajantasalla on tärkeää tietoturvan kannalta
@@ -21,7 +20,7 @@ Tero Karvisen (19.9.2017) kirjoittamasa artikkelissa ohjeistetaan miten konfigur
   
    
  # H6
- Harjoituksen tarkoituksena on vuokrata oma virtuaalipalvelin ja laittaa sen asetukset kuntoon, asentaa weppipalvelin ja etsiä merkkejä murtautumisyrityksistä. Tein harjoituksen omalla pöytäkoneella 08.02.2023.
+ Harjoituksen tarkoituksena on vuokrata oma virtuaalipalvelin ja sen konfiguroiminen manuaalisti, asentaa weppipalvelin ja etsiä merkkejä murtautumisyrityksistä. Tein harjoituksen omalla pöytäkoneella 08.02.2023-09.02.2023.
  
 
  
@@ -33,6 +32,7 @@ Tero Karvisen (19.9.2017) kirjoittamasa artikkelissa ohjeistetaan miten konfigur
 * RAM 16 GB
 * Virtuaaliohjelmisto : Oracle VM VirtualBox
 * Virtuaalikoneen käyttöjärjestelmä: Debian-live-11.6.0-amd64-xfce+nonfree.iso
+* Virtuaalipalvelin: Linode Nanode 1 GB
 
 
 
@@ -51,11 +51,11 @@ Valitsin käyttöjärjestelmäksi Debian 11:sta ja alueeksi Frankfurt, DE (eu-ce
 
       
 
-## Uuuden virtuaalipalvelimen käyttöönotto  (21:15
+## Uuuden virtuaalipalvelimen käyttöönotto  (21:15)
 
 Aloitin harjoituksen yrittämällä yhdistää virtuaalipalvelimeen komennolla 
 
-    $ ssh root@IP-osoite
+    $ ssh root@194.233.167.186
     
 Mutta sain viestin, että ssh-komentoa ei löydy. Yritin käynnisttää ssh:n uudestaan komennolla 
 
@@ -70,7 +70,7 @@ Mutta sain viestin, että ssh-komentoa ei löydy.
 ![Add file: Upload](/ss/h63.PNG) 
 
 
-Etsityä netitä löysin mahdollisen ratkaisun ja päätin kokeilla asentaa ssh:n tämän ohjeen mukaan (https://www.cyberciti.biz/faq/debian-linux-install-openssh-sshd-server/) Käyttämällä komentoja 
+Etsittyä netistä löysin mahdollisen ratkaisun ja päätin kokeilla asentaa ssh:n tämän ohjeen mukaan (https://www.cyberciti.biz/faq/debian-linux-install-openssh-sshd-server/) Käyttämällä komentoja 
 
     $ apt-get update
     
@@ -82,15 +82,16 @@ Sain seuraavan error-viestin
 
 ![Add file: Upload](/ss/h64.PNG) 
 
-Löysin netistä mahdollisen tavan vapauttaa muistia (https://askubuntu.com/questions/178909/not-enough-space-in-var-cache-apt-archivesVapautin) poistamalla kaikki paketit jota ei ole asennettu komennolla
+Löysin netistä mahdollisen tavan vapauttaa muistia (https://askubuntu.com/questions/178909/not-enough-space-in-var-cache-apt-archivesVapautin) poistamalla kaikki paketit jota ei ole asennettu. Käyttäen komentoa
 
     $ sudo apt-get autoclean
 
-Komento onnistui ja sain asennettua openssh-serverin.
+Sain vapautettua muistia ja asennettua openssh-serverin.
 
 Varmistin vielä, että ssh-palvelu on päällä komennoilla
 
     $ sudo systemctl restart ssh
+    
     
     $ sudo systemctl status ssh
     
@@ -98,17 +99,17 @@ Varmistin vielä, että ssh-palvelu on päällä komennoilla
  
  Ssh näyttäisi olevan käynnissä. Seuraavaksi yritin yhdistää uudestaa virtuaalipalvelimeen komennolla
  
-    $ ssh root@IP-osoite
+    $ ssh root@194.233.167.186
     
    
- Pääsin sisään syötettyäni Linodeen luomani salasanan. Seuraavaksi päivin paketit ja asensin palomuurin komnennoilla
+ Pääsin sisään syötettyäni Linodeen luomani salasanan. Seuraavaksi päivitin paketit ja asensin palomuurin komnennoilla
  
     
     $ sudo apt-get update
     
     $ sudo apt-get install ufw
   
-  Seuraavaksi loin palomuuriin reiän ssh:lle ja laitoin palomuurin päälle komennoilla
+  Seuraavaksi loin palomuuriin reiän ssh:lle ja sen jälkeen laitoin palomuurin päälle komennoilla
   
     $ sudo ufw allow 22/tcp
     
@@ -128,11 +129,11 @@ Kokeilin kirjautua uudella käyttäjällä eri terminaalissa komennolla
 
     $ ssh roi@IP-osoite
     
-  Ja pääsin sisään. Seuraavaksi lukitsin root-käyttäjän komenolla
+  Ja pääsin sisään. Seuraavaksi lukitsin juurikäyttäjän salasanan komenolla
   
     $ sudo usermod --lock root
     
- Tämän jälkeen kävin muokkaamassa muokkaamassa ssh:n konfiguraatio tiedostoa ja poistin root kirjautumisin käytöstä komennolla
+ Tämän jälkeen kävin muokkaamassa muokkaamassa ssh:n konfiguraatio tiedostoa ja poistin juurikäyttäjänä kirjautumisen käytöstä komennolla
  
     $ sudoedit /etc/ssh/sshd_config
     
@@ -149,7 +150,7 @@ Seuraavaksi kirjauduin sisään uudella käyttäjällä komennolla
 
      $ ssh roi@IP-osoite
  
- Sitten päivitin ja asensin uusimmat paketit komennoilla 
+ Sitten vielä päivitin ja asensin uusimmat paketit komennoilla 
  
      $ sudo apt-get update
      $ sudo apt-get upgrade
@@ -189,11 +190,11 @@ Seuraavaksi kirjauduin sisään uudella käyttäjällä komennolla
    ![Add file: Upload](/ss/h670.PNG)  
     
    
- Tämän jälkeen tein palomuuriin reiän komennolla 
+ Tämän jälkeen tein palomuuriin uudestaan reiän komennolla 
  
       $ sudo ufw allow 80/tcp
       
-Kävin selaimessa tarkistamassa muutokset ja testisivu latautui
+Kävin selaimessa tosiella laitteella tarkistamassa muutokset ja testisivu latautui
 
 
    ![Add file: Upload](/ss/h671.PNG)  
@@ -214,7 +215,7 @@ Mutta en löytänyt sieltä mitään omaan silmään hälyyttävää.
 
  ## Lopuksi 
  
- Tässä harjoituksessa tutustuin vuokrasin virtuaalipalvelimen ja laitoin sen toimintaan. Asensin myös webbipalvelimen ja yutkin myös murtautumisyrityksiä. Ongelmia tuotti ssh:n puuttuminen ja muistin loppuminen. 
+ Tässä harjoituksessa vuokrasin virtuaalipalvelimen ja konfiguroin sen manuaalisesti. Asensin myös webbipalvelimen ja tutkin murtautumisyrityksiä. Ongelmia tuotti ssh:n puuttuminen ja muistin loppuminen. 
  
  
 ## Lähteet
