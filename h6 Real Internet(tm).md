@@ -28,7 +28,7 @@ Artikkelin tarkoituksena on toimia pohjustuksena Apachen HTTP-palvelimien ja net
    
    
  # H6
- Harjoituksen tarkoituksena on vaihtaa Apache-palvelimelle uusi etusivu ja harjoitella vianmääritystä. Tein harjoituksen omalla pöytäkoneella 04.02.2023.
+ Harjoituksen tarkoituksena on vuokrata oma virtuaalipalvelin ja laittaa sen astukset kuntoon, asentaa weppipalvelin ja etsiä merkkejä murtautumisyrityksistä. Tein harjoituksen omalla pöytäkoneella 08.02.2023.
  
 
  
@@ -45,58 +45,86 @@ Artikkelin tarkoituksena on toimia pohjustuksena Apachen HTTP-palvelimien ja net
 
 
 
-## Apachen-palvelimen etusivun vaihtaminen (0:36-01:17-4.2.2023)
+## Virtuaali palvelimen vuokraus Linodesta (https://www.linode.com/)
 
-Aluksi loin käyttäjälle 'r01' uuden kansion komennolla
+Aluksi loin käyttäjätunnuksen Linoden palveluun ja lisäsin maksukortin. Tämän jälkeen loin uuden virtuaalipalvelimen 'create Linode' kohdasta.
 
-    $ mkdir public_sites
+![Add file: Upload](/ss/h61.PNG)
     
-vaihdoin kansioon komennolla
+Valitsin käyttöjärjestelmäksi Debian 11:sta ja alueeksi Frankfurt, DE (eu-central). Virtuaalipalvelimeksi valitsin Nanode 1 GB:n.  
+  
+![Add file: Upload](/ss/h62.PNG)  
 
-    $ cd public_sites
-       
- ja  lisäsin kansioon tiedoston 'index.html', minne lisäsin tekstiä micro-editoria käyttäen, komennolla
+
+      
+
+## Uuuden virtuaalipalvelimen käyttöönotto  (21:15
+
+Aloitin harjoituksen yrittämällä yhdistää virtuaalipalvelimeen komennolla 
+
+    $ ssh root@IP-osoite
+    
+Mutta sain viestin, että ssh-komentoa ei löydy. Yritin käynnisttää ssh:n uudestaan komennolla 
+
+    $ sudo systemctl restart ssh
+    
+Mutta kyseistä palvelua ei ilmeisesti löydy. Kokeilin vielä tarkistaa ssh:n version komennolla
+
+    $ ssh -v
+    
+Mutta sain viestin, että ssh-komentoa ei löydy.
+
+![Add file: Upload](/ss/h63.PNG) 
+
+
+Etsityä netitä löysin mahdollisen ratkaisun ja päätin kokeilla asentaa ssh:n tämän ohjeen mukaan (https://www.cyberciti.biz/faq/debian-linux-install-openssh-sshd-server/) Käyttämällä komentoja 
+
+    $ apt-get update
+    
+   ja
+   
+    $ apt-get install openssh-server
+
+Sain seuraavan error-viestin 
+
+![Add file: Upload](/ss/h64.PNG) 
+
+Löysin netistä mahdollisen tavan vapauttaa muistia (https://askubuntu.com/questions/178909/not-enough-space-in-var-cache-apt-archivesVapautin) poistamalla kaikki paketit jota ei ole asennettu komennolla
+
+    $ sudo apt-get autoclean
+
+Komento onnistu ja sain asennettua openssh-serverin.
+
+Varmistin vielä, että ssh-palvelu on päällä komennoilla
+
+    $ sudo systemctl restart ssh
+    
+    $ sudo systemctl status ssh
+    
+ ![Add file: Upload](/ss/h65.PNG)    
  
-    $ micro index.html
-    
- ![Add file: Upload](/ss/microsite.PNG)   
+ Ssh näyttäisi olevan käynnissä. Seuraavaksi yritin yhdistää uudestaa virtuaalipalvelimeen komennolla
  
-  ![Add file: Upload](/ss/path.PNG)  
+    $ ssh root@IP-osoite
     
-Seuraavaksi käytin komentoa
-
-    $ sudoedit /etc/apache2/sites-available/frontpage.conf
+   
+ Pääsin sisään syötettyäni Linodeen luomani salasanan. Seuraavaksi päivin paketit ja asensin palomuurin komnennoilla
+ 
     
-  Luodakseni uuden etusivun konfiguraation ja lisäsin sinne seuraavanlaisen tiedoston käyttäen micro-editoria
-  
-  ![Add file: Upload](/ss/virtualhostfile.PNG)  
-  
-  Seuraavaksi otin käyttöön luomani uuden sivun konfiguraation ja poistin oletussivu-konfiguraation käytöstä komennoilla
-  
-      $ sudo a2ensite frontpage.conf
-      $ sudo a2dissite 000-default.conf
-      
-   Tämän jälkeen käynnistin Apachen uudestaan kommenolla
-   
-      $ sudo systemctl restart apache2
-      
-   Tämän jälkeen tarkistin muutosten toimivuuden komennolla
-   
-      $ curl 'localhost'
-      
-   ja käymällä selaimen localhost-sivulla
-   
-   ![Add file: Upload](/ss/curllocalhost.PNG)
-   
-   ![Add file: Upload](/ss/localtest.PNG)
-      
-
-## Virheen vianmääritys  (11:36-4.2.2023)
-
-Aloitin harjoituksen muokkaamalla frontpage.conf-tiedostoa komennolla
-
-    $ sudoedit /etc/apache2/sites-available/frontpage.conf
+    $ sudo apt-get update
     
+    $ sudo apt-get install ufw
+  
+  Seuraavaksi loin palomuuriin reiän ssh:lle ja laitoin palomuurin päälle komennoilla
+  
+    $ sudo ufw allow 22/tcp
+    
+    $ sudo ufw enable
+    
+  ![Add file: Upload](/ss/h66.PNG)    
+    
+
+ 
     
  ja lisäämällä kirjoitusvirheen riville 3  'Directory' -> 'Directtory'.
  
