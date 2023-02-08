@@ -93,7 +93,7 @@ Löysin netistä mahdollisen tavan vapauttaa muistia (https://askubuntu.com/ques
 
     $ sudo apt-get autoclean
 
-Komento onnistu ja sain asennettua openssh-serverin.
+Komento onnistui ja sain asennettua openssh-serverin.
 
 Varmistin vielä, että ssh-palvelu on päällä komennoilla
 
@@ -123,6 +123,31 @@ Varmistin vielä, että ssh-palvelu on päällä komennoilla
     
   ![Add file: Upload](/ss/h66.PNG)    
     
+
+Seuraavaksi loin uuden käyttäjän ja annoin sille oikeuksia kommennoilla 
+
+    $ sudo adduser roi
+    $ sudo adduser roi sudo
+    $ sudo adduser roi adm
+    
+    
+Kokeilin kirjautua uudella käyttäjällä eri terminaalissa komennolla
+
+    $ ssh roi@IP-osoit
+    
+  Ja pääsin sisään. Seuraavaksi lukitsin root-käyttäjän komenolla
+  
+    $ sudo usermod --lock root
+    
+ Tämän jälkeen kävin muokkaamassa muokkaamassa ssh:n konfiguraatio tiedostoa ja poistin root kirjautumisin käytöstä komennolla
+ 
+    $ sudoedit /etc/ssh/sshd_config
+    
+Ja muuttamalla kohtaa PermitRootLogin yes -> no
+   
+  ![Add file: Upload](/ss/h67.PNG) 
+   
+   
 
  
     
