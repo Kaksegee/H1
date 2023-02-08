@@ -219,10 +219,13 @@ Mutta en löytänyt sieltä mitään omaan silmään hälyyttävää.
  
 ## Lähteet
 
-
 Linux Palvelimet 2023 alkukevät, Tero Karvinen (https://terokarvinen.com/2023/linux-palvelimet-2023-alkukevat/)
 
 First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS, Tero Karvinen - 19.9.2017 (https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/)
+
+How to install OpenSSH server on Debian Linux 9/10/11, Vivek Gite - 29.3.2022 (https://www.cyberciti.biz/faq/debian-linux-install-openssh-sshd-server/)
+
+Not enough space in /var/cache/apt/archives/ (https://askubuntu.com/questions/178909/not-enough-space-in-var-cache-apt-archives)
 
 
 
