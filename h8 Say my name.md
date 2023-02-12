@@ -70,20 +70,38 @@ Seuraavaksi siirryin tarkastelemaan luomaani sivustoa komennolla
 
 ![Add file: Upload](/ss/h87.PNG)  
 
-Ensimmäinen kappale kertoo Dig-työkalun version ja mihin osoitteeseen sitä on käytetty. Kappaleessa myös kerrotaan, mikä operaatio on tehty, tässä tapauksessa kysely (QUERY) ja onnistuiko kyseinen operaatio (onnistui=NOERROR). 
+Ensimmäinen kappale kertoo Dig-työkalun version ja mihin osoitteeseen sitä on käytetty. Kappaleessa myös kerrotaan, mikä operaatio on tehty, tässä tapauksessa kysely (QUERY), onnistuiko kyseinen operaatio (onnistui=NOERROR) ja operaation id. Tämän jälkeen on määritelty vastausmuoto erillaisten ilmoitusten (flags) avulla.
 
-Vastaus kohdassa (Answer section) kerrotaan ensin haettu sivu ja sen jälkeen TTL, eli kuinka pitkää kestää ennen kuin data päivittyy. 'IN' kertoo, että tein internet kyselyn ja 'A' kertoo minkälaisesta recordista oli kyse (tässä tapauksessa A-record). Rivin lopussa näkyy vielä haetun sivun IP-osoite.
-Query time kertoo, kuinka kauan vastauksen saamiseen kesti (tässä tapauksessa 20 millisekunttia). When kertoo milloin kysely on tehty ja MSG size kertoo kuinka suuri kyselyn vastaus oli (60 tavua).
+OPT PSEUDOSECTION kertoo mikä EDNS versio on käytössä (EDNS0), siihen liittyvät ilmoitukset (flags) ja pyyntöä kantavan UDP paketin koko.
+
+Kysymys kohdassa (Question section) Kerrotaan mihin osoitteeseen kysely on suoritettu.
+
+Vastaus kohdassa (Answer section) kerrotaan ensin haettu sivu ja sen jälkeen TTL, eli kuinka pitkään kestää ennen kuin data päivittyy. 'IN' kertoo, että tein internet kyselyn ja 'A' kertoo minkälaisesta recordista oli kyse (tässä tapauksessa A-record). Rivin lopussa näkyy vielä haetun sivun IP-osoite.
+Query time kertoo, kuinka kauan vastauksen saamisessa kesti (tässä tapauksessa 20 millisekunttia). When kertoo milloin kysely on tehty ja MSG size kertoo kuinka suuri kyselyn vastaus oli (60 tavua).
+
+
+
+Tämän jälkeen tarkastelin vielä sivustoa host komennolla
+
+      $ host roipartanen.com
+      
+Ja sain seuraavan tuloksen
+
+![Add file: Upload](/ss/h88.PNG)  
+
+Ensiksi työkalu kertoo sivuston ja siihen liitetyn IP-osoitteen (194.233.167.186).
+Seuraavaksi työkalu ilmeisesti kertoo minkä palvelimien kautta sähköpostien uudelleenohjaus tapahtuu jos se on otettu käyttöön. 
 
 
 
 
-    
+
+
 
 
  ## Lopuksi 
  
- Tässä harjoituksessa vuokrasin virtuaalipalvelimen ja konfiguroin sen manuaalisesti. Asensin myös webbipalvelimen ja tutkin murtautumisyrityksiä. Ongelmia tuotti ssh:n puuttuminen ja muistin loppuminen. 
+ Tässä harjoituksessa vuokrasin oman domainnimen ja yhdistin sen luomaani virtuaalipalvelimeen. Harjoittelin myös dig- ja host-työkalun käyttöä.
  
  
 ## Lähteet
