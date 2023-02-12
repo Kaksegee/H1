@@ -70,6 +70,12 @@ Seuraavaksi siirryin tarkastelemaan luomaani sivustoa komennolla
 
 ![Add file: Upload](/ss/h87.PNG)  
 
+Ensimmäinen kappale kertoo Dig-työkalun version ja mihin osoitteeseen sitä on käytetty. Kappaleessa myös kerrotaan, mikä operaatio on tehty, tässä tapauksessa kysely (QUERY) ja onnistuiko kyseinen operaatio (onnistui=NOERROR). 
+
+Vastaus kohdassa (Answer section) kerrotaan ensin haettu sivu ja sen jälkeen TTL, eli kuinka pitkää kestää ennen kuin data päivittyy. 'IN' kertoo, että tein internet kyselyn ja 'A' kertoo minkälaisesta recordista oli kyse (tässä tapauksessa A-record). Rivin lopussa näkyy vielä haetun sivun IP-osoite.
+Query time kertoo, kuinka kauan vastauksen saamiseen kesti (tässä tapauksessa 20 millisekunttia). When kertoo milloin kysely on tehty ja MSG size kertoo kuinka suuri kyselyn vastaus oli (60 tavua).
+
+
 
 
     
