@@ -1,13 +1,12 @@
 
-x) Esimerkki Palvelusta
+# x) Esimerkki Palvelusta
 
-Esimerkkinä voisi toimia 
+Esimerkkinä voisi toimia suoratoistopalvelu. Hyötyinä voisi olla palvelun nopeus ja laatu.
 
 
 
 # H9
- Harjoituksen tarkoituksena on vuokrata oma domainnimi NameCheapista ja asettaa se osoittamaan tehtävässä h7 luotuun virtuaalipalvelimeen. Tutkin myös domainnimeä host- ja dig-komennoilla. Tein harjoituksen omalla pöytäkoneella 12.02.2023-13.02.2023.
- 
+ Harjoituksen tarkoituksena on asentaa PostgreSQL ja harjoitella datan luomista, lukemista, päivittämistä ja poistoa.
 
  
  
@@ -24,7 +23,7 @@ Esimerkkinä voisi toimia
 
 
 
-## PostgreSQL:n asentaminen ja testaaminen (0:00)
+## PostgreSQL:n asentaminen ja testaaminen (0:00-0:55)
 
 Alotin harjoituksen asentamalla PostgreSQL:n kommeoilla:
 
@@ -66,13 +65,52 @@ Siirryin PostgreSQL:ään komenolla
     
 Avasin taulukon näkymiin komennolla
 
-    r01p4r> \d students
+    r01p4r=> \d students
     
 ![Add file: Upload](/ss/h94.PNG)  
-     
+
+Seuraavaksi lisäsin taulukkoon nimiä käyttäen komentoja
+
+    
+    r01p4r=> INSERT INTO students(name) VALUES ('Sami');
+    r01p4r=> INSERT INTO students(name) VALUES ('Lotta');
+    r01p4r=> INSERT INTO students(name) VALUES ('Roi');
+    
+Tarkistin nimien lisäämisen komennolla
+
+    r01p4r=> SELECT * FROM students;
+    
+ 
+![Add file: Upload](/ss/h95.PNG)  
 
 
+Seuraavaksi päivitin yhtä taulukon nimeä komennolla
 
+    r01p4r=> UPDATE students SET name='Roi Moi' WHERE name='Roi';
+    
+ Tarkistin nimen päivittämistä komennolla
+
+    r01p4r=> select * from students;
+
+![Add file: Upload](/ss/h96.PNG)  
+
+
+   Seuraavaksi poistin nimen 'Sami' taulukosta students komennolla
+   
+      r01p4r=> DELETE FROM students WHERE name='Sami';
+      
+  Tarkistin nimen ppoistoa komennolla
+
+    r01p4r=> select * from students;
+    
+   ![Add file: Upload](/ss/h97.PNG)  
+    
+    
+    
+    
+
+      
+   
 
 
 
@@ -80,7 +118,7 @@ Avasin taulukon näkymiin komennolla
 
  ## Lopuksi 
  
- Tässä harjoituksessa vuokrasin oman domainnimen ja yhdistin sen aikaisemmin luomaani virtuaalipalvelimeen. Harjoittelin myös dig- ja host-työkalun käyttöä.
+ Tässä harjoituksessa asensin PostgreSQL:n ja harjoittelin datan luomista, lukemista, päivittämistä ja poistoa.
  
  
 ## Lähteet
@@ -89,7 +127,7 @@ Linux Palvelimet 2023 alkukevät, Tero Karvinen (https://terokarvinen.com/2023/l
 
 Install PostgreSQL on Ubuntu – New user and database in 3 commands, Tero Karvinen - 3.3.2016 (https://terokarvinen.com/2016/03/03/install-postgresql-on-ubuntu-new-user-and-database-in-3-commands/)
 
-PostgreSQL Install and One Table Database – SQL CRUD tutorial for Ubuntu, Tero Karvinen - 5.3.2016 (PostgreSQL Install and One Table Database – SQL CRUD tutorial for Ubuntu)
+PostgreSQL Install and One Table Database – SQL CRUD tutorial for Ubuntu, Tero Karvinen - 5.3.2016 (https://terokarvinen.com/2016/03/05/postgresql-install-and-one-table-database-sql-crud-tutorial-for-ubuntu/)
 
 
 
