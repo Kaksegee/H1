@@ -53,30 +53,30 @@ Seuraavaksi loin uuden tietokannan ja lisäsin käyttäjän kommenoilla:
 
 ## CRUD (0:13)
 
-Siirryin PostgreSQL:ään komenolla
+Siirryin PostgreSQL:ään komenolla:
 
     $ psql
     
- Ja loin uuden taulukon komennolla
+ Ja loin uuden taulukon komennolla:
   
     r01p4r=> CREATE TABLE students (id SERIAL PRIMARY KEY, name VARCHAR(200));
     
    ![Add file: Upload](/ss/h93.PNG)  
     
-Avasin taulukon näkymiin komennolla
+Avasin taulukon näkymiin komennolla:
 
     r01p4r=> \d students
     
 ![Add file: Upload](/ss/h94.PNG)  
 
-Seuraavaksi lisäsin taulukkoon nimiä käyttäen komentoja
+Seuraavaksi lisäsin taulukkoon nimiä käyttäen komentoja:
 
     
     r01p4r=> INSERT INTO students(name) VALUES ('Sami');
     r01p4r=> INSERT INTO students(name) VALUES ('Lotta');
     r01p4r=> INSERT INTO students(name) VALUES ('Roi');
     
-Tarkistin nimien lisäämisen komennolla
+Tarkistin nimien lisäämisen komennolla:
 
     r01p4r=> SELECT * FROM students;
     
@@ -84,22 +84,22 @@ Tarkistin nimien lisäämisen komennolla
 ![Add file: Upload](/ss/h95.PNG)  
 
 
-Seuraavaksi päivitin yhtä taulukon nimeä komennolla
+Seuraavaksi päivitin yhtä taulukon nimeä komennolla:
 
     r01p4r=> UPDATE students SET name='Roi Moi' WHERE name='Roi';
     
- Tarkistin nimen päivittämistä komennolla
+ Tarkistin nimen päivittämistä komennolla:
 
     r01p4r=> select * from students;
 
 ![Add file: Upload](/ss/h96.PNG)  
 
 
-   Seuraavaksi poistin nimen 'Sami' taulukosta students komennolla
+   Seuraavaksi poistin nimen 'Sami' taulukosta students komennolla:
    
       r01p4r=> DELETE FROM students WHERE name='Sami';
       
-  Tarkistin nimen ppoistoa komennolla
+  Tarkistin nimen poistoa komennolla:
 
     r01p4r=> select * from students;
     
