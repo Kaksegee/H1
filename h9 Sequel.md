@@ -1,4 +1,11 @@
-# H8
+
+x) Esimerkki Palvelusta
+
+Esimerkkinä voisi toimia 
+
+
+
+# H9
  Harjoituksen tarkoituksena on vuokrata oma domainnimi NameCheapista ja asettaa se osoittamaan tehtävässä h7 luotuun virtuaalipalvelimeen. Tutkin myös domainnimeä host- ja dig-komennoilla. Tein harjoituksen omalla pöytäkoneella 12.02.2023-13.02.2023.
  
 
@@ -17,32 +24,44 @@
 
 
 
-## Domainnimen vuokraaminen NameCheapista (https://www.namecheap.com/) (23:07)
+## PostgreSQL:n asentaminen ja testaaminen (0:00)
 
-Aluksi tarkastin haluamani domainnimen "www.roipartanen.com" saatavuuden. 
+Alotin harjoituksen asentamalla PostgreSQL:n kommeoilla:
 
-![Add file: Upload](/ss/h81.PNG)
+    $ sudo apt-get update
+    $ sudo apt-get -y install postgresql
     
-Nimi oli saatavilla. Seuraavaksi siirryin luomaan käyttäjätilin.
+Tämän jälkeen käynnistin postgreSQL:n komennolla:
 
-Luotuani käyttäjätilin ja vuokrattuani domainnimen siirryin käyttäjän dashboardiin ja sieltä domain listin kautta muokkaamaan vuokraamaani domainia.
+    $ sudo systemctl start postgresql
+    
+Seuraavaksi loin uuden tietokannan ja lisäsin käyttäjän kommenoilla:
+
+    $ sudo -u postgres createdb r01p4r
+    $ sudo -u postgres createuser r01p4r
   
-![Add file: Upload](/ss/h82.PNG)  
+![Add file: Upload](/ss/h91.PNG)
 
-Kohdassa 'advanced DNS' lisäsin 'Add new record' kohdasta kaksi uutta A-record tyyppistä hostia ja yhdistin ne luomani virtuaalipalvelimen IP-osoitteeseen.
+  Seuraavaksi testasin postgreSQL:n toimivuuden komennolla:
+   
+    $ psql
+  
+  ![Add file: Upload](/ss/h92.PNG)
+  
+  PostgreSQL toimii.
+     
+   
 
-![Add file: Upload](/ss/h83.PNG)  
+## CRUD (0:13)
 
-Hostien '@' ja 'www' pitäisi taata, että molemmat osoitemuodot roipartanen.com ja www.roipartanen.com toimivat. Luotuani hostit tarkistin selaimesta molempien toimivuuden.
+Siirryin PostgreSQL:ään komenolla
 
-![Add file: Upload](/ss/h84.PNG)  
-
- ![Add file: Upload](/ss/h85.PNG)       
- 
- Molemmat hostit toimivat.
-
-## Domainnimen tutkiminen käyttäen dig- ja host-komentoa (23:33-0:44)
-
+    $ psql
+    
+ Ja loin uuden taulukon komennolla
+  
+    r01p4r=> CREATE TABLE students (id SERIAL PRIMARY KEY, name VARCHAR(200));
+    CREATE TABLE
 
 Aloitin harjoituksen käyttämällä komentoa 
 
@@ -108,11 +127,11 @@ Seuraavaksi työkalu ilmeisesti kertoo minkä palvelimien kautta sähköpostien 
 
 Linux Palvelimet 2023 alkukevät, Tero Karvinen (https://terokarvinen.com/2023/linux-palvelimet-2023-alkukevat/)
 
-Install DIG on Debian 11, David Adams (https://linuxhint.com/install-dig-debian-11/)
+Install PostgreSQL on Ubuntu – New user and database in 3 commands, Tero Karvinen - 3.3.2016 (https://terokarvinen.com/2016/03/03/install-postgresql-on-ubuntu-new-user-and-database-in-3-commands/)
 
-What does OPT PSEUDOSECTION mean in `dig` response? (https://serverfault.com/questions/1018425/what-does-opt-pseudosection-mean-in-dig-response)
-
-
+PostgreSQL Install and One Table Database – SQL CRUD tutorial for Ubuntu, Tero Karvinen - 5.3.2016 (PostgreSQL Install and One Table Database – SQL CRUD tutorial for Ubuntu)
 
 
-#### Tehnyt Roi Partanen 12.02.2023-13.02.2023
+
+
+#### Tehnyt Roi Partanen 16.2.2023
