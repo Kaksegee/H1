@@ -25,7 +25,7 @@ Esimerkkinä voisi toimia suoratoistopalvelu. Hyötyinä voisi olla palvelun nop
 
 ## PostgreSQL:n asentaminen ja testaaminen (0:00-0:55)
 
-Alotin harjoituksen asentamalla PostgreSQL:n kommeoilla:
+Aloitin harjoituksen asentamalla PostgreSQL:n komenoilla:
 
     $ sudo apt-get update
     $ sudo apt-get -y install postgresql
@@ -63,7 +63,7 @@ Siirryin PostgreSQL:ään komenolla:
     
    ![Add file: Upload](/ss/h93.PNG)  
     
-Avasin taulukon näkymiin komennolla:
+Avasin taulukon komennolla:
 
     r01p4r=> \d students
     
@@ -88,7 +88,7 @@ Seuraavaksi päivitin yhtä taulukon nimeä komennolla:
 
     r01p4r=> UPDATE students SET name='Roi Moi' WHERE name='Roi';
     
- Tarkistin nimen päivittämistä komennolla:
+ Tarkistin nimen päivittymistä komennolla:
 
     r01p4r=> select * from students;
 
@@ -99,7 +99,7 @@ Seuraavaksi päivitin yhtä taulukon nimeä komennolla:
    
       r01p4r=> DELETE FROM students WHERE name='Sami';
       
-  Tarkistin nimen poistoa komennolla:
+  Tarkastelin nimen poiston onnistuneisuutta komennolla:
 
     r01p4r=> select * from students;
     
