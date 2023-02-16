@@ -1,8 +1,16 @@
 
 # x) Esimerkki Palvelusta
 
-Esimerkkinä voisi toimia suoratoistopalvelu. Hyötyinä voisi olla palvelun nopeus ja laatu.
+Esimerkkinä voisi toimia Wikipedia. Käyttäjät katsovat tai luovat dataa nettisivujen kautta tietokantaan. Tietokannan käytön hyötyjä on mm. 
 
+* Tiedon saatavuus ja muokattavuus
+* Datan jakaminen
+* Ylimääräisen datan vähentäminen
+* Datan johdonmukaisuus
+* Datan turvallisuus
+* Datan eheys
+* Tietokannan koon kasvattaminen
+* Kustannukset
 
 
 # H9
